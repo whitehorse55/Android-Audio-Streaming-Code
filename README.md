@@ -1,20 +1,28 @@
 # Android-Audio-Streaming-Code
 
 private void playMusic(final String str)
-    {
+  
+  {
+        
         if (mix != null)
+        
         {
+            
             mix.stop();
-        }
+       
+       }
 
-//        mix = new MediaPlayer();
+//      mix = new MediaPlayer();
+
         mix =MediaPlayer.create(getApplicationContext(), getResources().getIdentifier(str,"raw",getPackageName()));
+        
         mix.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mix.start();
             }
         });
+        
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         mix.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
